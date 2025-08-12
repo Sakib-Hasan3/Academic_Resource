@@ -1,0 +1,10 @@
+org 100h                 ; .COM starts at 100h
+
+mov  ah, 09h             ; DOS print-string
+mov  dx, offset msg      ; DS:DX -> string address
+int  21h
+
+mov  ax, 4C00h           ; exit to DOS
+int  21h
+
+msg db 'Hello, EMU8086!$'
