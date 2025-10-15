@@ -1,4 +1,3 @@
-
 # সহজ First-Order Logic (unary predicate) প্রমাণ
 
 # প্রেডিকেট ফাংশন
@@ -24,4 +23,5 @@ if new_fact:
 print("Knowledge Base:", facts)
 print("Query:", query)
 print("Proved?", query in facts)
+
 
