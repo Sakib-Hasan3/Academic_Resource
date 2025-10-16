@@ -1,4 +1,3 @@
-
 from collections import deque
 
 def bfs_shortest_path(graph, start, goal):
@@ -34,4 +33,5 @@ graph = {
 
 # Find shortest path from A to F
 print(bfs_shortest_path(graph, 'A', 'F'))
+
 
