@@ -1,4 +1,3 @@
-
 org 100h
 jmp start
 
@@ -42,4 +41,5 @@ print_hex_nib:
 ph_out: mov  ah, 02h
         int  21h
         ret
+
 
