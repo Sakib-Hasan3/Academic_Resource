@@ -1,4 +1,3 @@
-
 # 8 Queens Problem using Backtracking
 
 N = 8  # 8x8 chess board
@@ -48,6 +47,7 @@ board = [["." for _ in range(N)] for _ in range(N)]
 
 # Solve and print
 solve(board)
+
 
 
 
