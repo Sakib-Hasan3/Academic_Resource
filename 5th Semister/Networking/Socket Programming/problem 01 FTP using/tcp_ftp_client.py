@@ -1,4 +1,3 @@
-
 import socket
 import time
 
@@ -10,7 +9,7 @@ client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.settimeout(3)  # timeout = 3 sec
 client.connect((HOST, PORT))
 
-filename = "testfile.txt"
+filename = r"E:\Socket Programming\problem 01 FTP using\testfile.txt"
 
 with open(filename, "rb") as f:
     while True:
@@ -38,4 +37,3 @@ with open(filename, "rb") as f:
 client.sendall(b"EOF")
 
 client.close()
-

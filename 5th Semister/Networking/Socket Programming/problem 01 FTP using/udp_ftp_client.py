@@ -7,7 +7,7 @@ client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 filename = input("Enter filename to send: ")
 
-with open(filename, 'r') as f:
+with open(r"E:\Socket Programming\problem 01 FTP using\testfile.txt", 'r') as f:
     for line in f:
         client.sendto(line.encode(), (HOST, PORT))
         print(f"Sent: {line.strip()}")
