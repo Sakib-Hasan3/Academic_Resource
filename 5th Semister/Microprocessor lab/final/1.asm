@@ -1,3 +1,4 @@
+
 org 100h
 
 jmp start              ; skip over data
@@ -85,3 +86,4 @@ zf_is_one:
     int  21h
 
 end start
+
