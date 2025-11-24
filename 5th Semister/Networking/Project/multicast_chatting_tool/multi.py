@@ -1,3 +1,4 @@
+
 import socket
 import struct
 import threading
@@ -535,4 +536,5 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = MessengerApp(root)
     root.protocol("WM_DELETE_WINDOW", app.on_close)
+
     root.mainloop()
