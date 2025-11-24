@@ -1,3 +1,4 @@
+
 # Multicast Chatting Tool
 
 A real-time group chat application built with Python using multicast networking. This tool allows multiple users on the same network to communicate in a shared chat room without requiring a central server.
@@ -266,5 +267,6 @@ For support, questions, or bug reports:
 3. Create a new issue with detailed information about your problem
 
 ---
+
 
 **Note**: This application is designed for educational purposes and local network communication. For production use, consider implementing additional security measures such as message encryption and user authentication.
