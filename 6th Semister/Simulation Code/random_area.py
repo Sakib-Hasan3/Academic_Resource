@@ -1,3 +1,4 @@
+
 import random
 from typing import List, Tuple
 
@@ -41,3 +42,4 @@ polygon = [(0,0), (4,1), (3,4), (1,3), (-1,2)]
 
 area_est = monte_carlo_area_polygon(polygon, samples=300_000)
 print("Estimated area:", area_est)
+
