@@ -1,0 +1,55 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.Shift>
+
+@{
+    ViewBag.Title = "Shifts Index";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center">@ViewBag.Title</h2>
+
+    <!-- Create New Button -->
+    <p>
+        <a href="@Url.Action("Create", "Shift")" class="btn btn-success mb-3">Create New Shift</a>
+    </p>
+
+    <!-- Shift Table -->
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ShiftName)</th>
+                <th>@Html.DisplayNameFor(model => model.StartTime)</th>
+                <th>@Html.DisplayNameFor(model => model.EndTime)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.ShiftName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StartTime)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EndTime)</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Shift", new { id = item.ShiftId })" class="btn btn-warning btn-sm">Edit</a> |
+                        <a href="@Url.Action("Details", "Shift", new { id = item.ShiftId })" class="btn btn-info btn-sm">Details</a> |
+                        <a href="@Url.Action("Delete", "Shift", new { id = item.ShiftId })" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Styles {
+    <style>
+        /* Additional Custom Styling if needed */
+        .container {
+            margin-top: 30px;
+        }
+
+        .thead-dark {
+            background-color: #343a40;
+            color: white;
+        }
+    </style>
+}

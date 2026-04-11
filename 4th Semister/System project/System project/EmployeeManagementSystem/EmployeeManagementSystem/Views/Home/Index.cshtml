@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Dashboard - Arafat Paints EMS";
+}
+
+<h1 class="text-center my-4">Arafat Paints Employee Management</h1>
+
+<div class="container">
+
+    <!-- Intro Section -->
+    <div class="jumbotron bg-primary text-white text-center">
+        <h2>Welcome to the EMS Dashboard</h2>
+        <p>Manage your workforce, shifts, attendance, payroll and more—all in one place.</p>
+    </div>
+
+    <!-- Navigation Cards -->
+    <div class="row">
+        <!-- Employee -->
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Employees</h5>
+                    <p class="card-text">Add, view and update employee records.</p>
+                    <a href="@Url.Action("Index", "Employees")" class="btn btn-primary">View Employees</a>
+                    <a href="@Url.Action("Create", "Employees")" class="btn btn-outline-primary mt-2">Add Employee</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shifts -->
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Shifts</h5>
+                    <p class="card-text">Define and manage work shifts.</p>
+                    <a href="@Url.Action("Index", "Shift")" class="btn btn-primary">View Shifts</a>
+                    <a href="@Url.Action("Create", "Shift")" class="btn btn-outline-primary mt-2">Add Shift</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Attendance -->
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Attendance</h5>
+                    <p class="card-text">Log and review attendance entries.</p>
+                    <a href="@Url.Action("Index", "Attendance")" class="btn btn-primary">View Attendance</a>
+                    <a href="@Url.Action("Create", "Attendances")" class="btn btn-outline-primary mt-2">Log Attendance</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaves -->
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Leave Requests</h5>
+                    <p class="card-text">Approve or reject leaves.</p>
+                    <a href="@Url.Action("Index", "Leave")" class="btn btn-primary">View Leaves</a>
+                    <a href="@Url.Action("Create", "Leave")" class="btn btn-outline-primary mt-2">Add Leave</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payroll -->
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Payroll</h5>
+                    <p class="card-text">Generate and view payroll records.</p>
+                    <a href="@Url.Action("Index", "Payroll")" class="btn btn-primary">View Payroll</a>
+                    <a href="@Url.Action("Create", "Payroll")" class="btn btn-outline-primary mt-2">Add Payroll</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Productivity -->
+        <div class="col-sm-6 col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Productivity</h5>
+                    <p class="card-text">Track daily task outputs.</p>
+                    <a href="@Url.Action("Index", "Productivities")" class="btn btn-primary">View Reports</a>
+                    <a href="@Url.Action("Create", "Productivities")" class="btn btn-outline-primary mt-2">Add Record</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .jumbotron { background-color: #007bff; }
+        .card-title { font-size: 1.25rem; }
+        .card-text { font-size: 0.9rem; color: #555; }
+        .btn-outline-primary { border-color: #007bff; color: #007bff; }
+        .btn-outline-primary:hover { background-color: #007bff; color: white; }
+    </style>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

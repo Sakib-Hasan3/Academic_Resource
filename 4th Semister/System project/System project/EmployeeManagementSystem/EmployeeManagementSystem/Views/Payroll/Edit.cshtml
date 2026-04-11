@@ -1,0 +1,98 @@
+﻿@model EmployeeManagementSystem.Models.Payroll
+
+@{
+    ViewBag.Title = "Edit Payroll";
+}
+
+<h2 class="text-center my-4">@ViewBag.Title</h2>
+
+<div class="container">
+    <!-- Payroll Edit Card -->
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">Edit Payroll Details</h5>
+        </div>
+        <div class="card-body">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.PayrollId)
+
+                <!-- Employee Dropdown -->
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.EmployeeId, "Employee", htmlAttributes: new { @class = "col-sm-3 col-form-label" })
+                    <div class="col-sm-9">
+                        @Html.DropDownList("EmployeeId", null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Month Input -->
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.Month, htmlAttributes: new { @class = "col-sm-3 col-form-label" })
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.Month, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Month, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Basic Salary Input -->
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.BasicSalary, htmlAttributes: new { @class = "col-sm-3 col-form-label" })
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.BasicSalary, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.BasicSalary, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Attendance Bonus Input -->
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.AttendanceBonus, htmlAttributes: new { @class = "col-sm-3 col-form-label" })
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.AttendanceBonus, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AttendanceBonus, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Deductions Input -->
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.Deductions, htmlAttributes: new { @class = "col-sm-3 col-form-label" })
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.Deductions, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Deductions, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Generated Date Input -->
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.GeneratedDate, htmlAttributes: new { @class = "col-sm-3 col-form-label" })
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.GeneratedDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.GeneratedDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group row">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <input type="submit" value="Save" class="btn btn-success" />
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <!-- Back to List Button -->
+    <div class="mt-3">
+        <a href="@Url.Action("Index", "Payroll")" class="btn btn-secondary">Back to List</a>
+    </div>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,54 @@
+﻿@model EmployeeManagementSystem.Models.Shift
+
+@{
+    ViewBag.Title = "Create Shift";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center">@ViewBag.Title</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger mb-3" })
+
+        <!-- Shift Name Input -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.ShiftName, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.ShiftName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ShiftName, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Start Time Input -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.StartTime, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(
+                m => m.StartTime,
+                "{0:hh\\:mm}",
+                new { @class = "form-control", type = "time" }
+            )
+            @Html.ValidationMessageFor(m => m.StartTime, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- End Time Input -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.EndTime, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(
+                m => m.EndTime,
+                "{0:hh\\:mm}",
+                new { @class = "form-control", type = "time" }
+            )
+            @Html.ValidationMessageFor(m => m.EndTime, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Submit Button and Back Link -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create</button>
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary ml-2" })
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

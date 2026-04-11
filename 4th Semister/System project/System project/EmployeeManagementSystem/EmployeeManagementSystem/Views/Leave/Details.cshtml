@@ -1,0 +1,38 @@
+﻿@model EmployeeManagementSystem.Models.Leave
+
+@{
+    ViewBag.Title = "Leave Details";
+}
+
+<h2 class="text-center my-4">@ViewBag.Title</h2>
+
+<div class="container">
+    <!-- Leave Details Card -->
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">Leave Details</h5>
+        </div>
+        <div class="card-body">
+            <!-- Leave Information -->
+            <dl class="row">
+                <dt class="col-md-3">Employee:</dt>
+                <dd class="col-md-9">@Html.DisplayFor(model => model.Employee.FullName)</dd>
+
+                <dt class="col-md-3">Leave Date:</dt>
+                <dd class="col-md-9">@Html.DisplayFor(model => model.LeaveDate)</dd>
+
+                <dt class="col-md-3">Reason:</dt>
+                <dd class="col-md-9">@Html.DisplayFor(model => model.Reason)</dd>
+
+                <dt class="col-md-3">Status:</dt>
+                <dd class="col-md-9">@Html.DisplayFor(model => model.Status)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- Action Links -->
+    <div class="mt-4">
+        <a href="@Url.Action("Edit", new { id = Model.LeaveId })" class="btn btn-info">Edit</a>
+        <a href="@Url.Action("Index", "Leave")" class="btn btn-secondary ml-2">Back to List</a>
+    </div>
+</div>

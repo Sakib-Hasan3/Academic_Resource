@@ -1,0 +1,70 @@
+﻿@model EmployeeManagementSystem.Models.Attendance
+
+@{
+    ViewBag.Title = "Log Attendance";
+}
+
+<h2 class="text-center my-4">@ViewBag.Title</h2>
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger mb-3" })
+
+        <!-- Employee Selection -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.EmployeeId, htmlAttributes: new { @class = "control-label" })
+            @Html.DropDownListFor(m => m.EmployeeId, (SelectList)ViewBag.EmployeeId, "-- Select Employee --", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.EmployeeId, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Date Input -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.Date, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Date, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+            @Html.ValidationMessageFor(m => m.Date, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Check-In Time -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.CheckIn, "Check-In Time", htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.CheckIn, "{0:hh\\:mm}", new { @class = "form-control", type = "time" })
+            @Html.ValidationMessageFor(m => m.CheckIn, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Check-Out Time -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.CheckOut, "Check-Out Time", htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.CheckOut, "{0:hh\\:mm}", new { @class = "form-control", type = "time" })
+            @Html.ValidationMessageFor(m => m.CheckOut, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Attendance Type -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.AttendanceType, htmlAttributes: new { @class = "control-label" })
+            @Html.DropDownListFor(m => m.AttendanceType,
+                new SelectList(new[] { "Manual", "Biometric" }), "-- Select Type --",
+                new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.AttendanceType, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Save Attendance</button>
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary ml-2" })
+        </div>
+    }
+</div>
+
+@section Styles {
+    <style>
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+}

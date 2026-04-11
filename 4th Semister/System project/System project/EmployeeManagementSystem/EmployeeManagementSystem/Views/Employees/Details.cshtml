@@ -1,0 +1,78 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Employee Details</h2>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Employee Information</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Shift.ShiftName)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Shift.ShiftName)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.FullName)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.FullName)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Designation)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Designation)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.DateOfJoining)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DateOfJoining)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Salary)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Salary)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.ContactNumber)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ContactNumber)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer text-right">
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-secondary" })
+        </p>
+    </div>
+</div>

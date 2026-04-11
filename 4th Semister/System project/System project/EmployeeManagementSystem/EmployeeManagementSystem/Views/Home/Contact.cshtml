@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Contact";
+    ViewBag.Message = "Get in touch with us!";
+}
+
+<main class="container py-5" aria-labelledby="contactTitle">
+    <h2 id="contactTitle" class="mb-3">@ViewBag.Title</h2>
+    <h5 class="text-muted mb-4">@ViewBag.Message</h5>
+
+    <address>
+        <strong>Arafat Paints & Varnish Ltd</strong><br />
+        Kali Bari Rd, Barishal 8200<br />
+        <abbr title="Phone">P:</abbr> 01904-306730
+    </address>
+
+    <h4 class="mt-4">Hours</h4>
+    <ul>
+        <li><strong>Closed</strong></li>
+        <li><strong>Opens:</strong> 9:00 AM</li>
+    </ul>
+
+    <h4 class="mt-4">Support & Sales</h4>
+    <address>
+        <strong>Email:</strong> <a href="mailto:info@arafatpaints.com">info@arafatpaints.com</a><br />
+        <strong>Phone:</strong> 01904-306730
+    </address>
+</main>
+
+@section Styles {
+    <style>
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF,;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2d3e50;
+        }
+
+        h5, address {
+            color: #6c757d;
+        }
+
+        h4 {
+            color: #007bff;
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+            ul li {
+                margin-bottom: 0.5rem;
+            }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+}

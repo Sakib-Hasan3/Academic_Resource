@@ -1,0 +1,27 @@
+﻿@model EmployeeManagementSystem.Models.Attendance
+
+@{
+    ViewBag.Title = "Attendance Details";
+}
+
+<h2 class="text-center my-4">@ViewBag.Title</h2>
+
+<div class="container">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">Employee Attendance Information</h5>
+        </div>
+        <div class="card-body">
+            <h4>Employee: @Model.Employee.FullName</h4>
+            <p><strong>Date:</strong> @Model.Date.ToShortDateString()</p>
+            <p><strong>Check-In:</strong> @Model.CheckIn.ToString(@"hh\:mm")</p>
+            <p><strong>Check-Out:</strong> @Model.CheckOut.ToString(@"hh\:mm")</p>
+            <p><strong>Attendance Type:</strong> @Model.AttendanceType</p>
+        </div>
+        <div class="card-footer text-right">
+            <p>
+                @Html.ActionLink("Back to List", "Index", "Attendance", null, new { @class = "btn btn-secondary" })
+            </p>
+        </div>
+    </div>
+</div>

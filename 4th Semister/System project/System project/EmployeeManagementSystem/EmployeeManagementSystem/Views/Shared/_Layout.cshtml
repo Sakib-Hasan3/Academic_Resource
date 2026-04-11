@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title – Arafat Paints EMS</title>
+
+    <!-- 1. Bootstrap CSS (CDN) -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          integrity="sha384-…"
+          crossorigin="anonymous" />
+
+    <!-- 2. Your site CSS bundle (including site.css) -->
+    @Styles.Render("~/Content/css")
+    @RenderSection("Styles", required: false)
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Arafat Paints EMS", "Index", "Home", null, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="mainNav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Employees", "Index", "Employees", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Shifts", "Index", "Shift", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Attendance", "Index", "Attendance", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Leaves", "Index", "Leave", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Payroll", "Index", "Payroll", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Productivity", "Index", "Productivity", null, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        @RenderBody()
+        <hr />
+        <footer class="text-center text-muted">
+            &copy; @DateTime.Now.Year Arafat Paints & Varnish Ltd.
+        </footer>
+    </div>
+
+    <!-- 3. Bootstrap Bundle JS (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-…"
+            crossorigin="anonymous">
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

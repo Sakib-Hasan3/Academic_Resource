@@ -1,0 +1,43 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.Leave>
+
+@{
+    ViewBag.Title = "Leave Records";
+}
+
+<h2 class="text-center my-4">@ViewBag.Title</h2>
+
+<div class="container">
+    <!-- Create New Leave Link -->
+    <p class="text-right mb-3">
+        @Html.ActionLink("Create New Leave", "Create", "Leave", new { @class = "btn btn-primary" })
+    </p>
+
+    <!-- Leave Table -->
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Employee</th>
+                <th>Leave Date</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Employee.FullName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.LeaveDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Reason)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.LeaveId })" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="@Url.Action("Details", new { id = item.LeaveId })" class="btn btn-info btn-sm">Details</a>
+                        <a href="@Url.Action("Delete", new { id = item.LeaveId })" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
